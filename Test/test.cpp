@@ -3,6 +3,8 @@
 using namespace std;
 
 int main (){
-    cout << "test";
+    int quiz;
+    cin >> quiz;
+    cout << quiz;
     return 0;
 }
