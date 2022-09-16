@@ -20,7 +20,7 @@
             ],
             "group": "build",
             "detail": "compiler: /usr/bin/clang++"
-        }
+        },
     ],
     "version": "2.0.0"
 }
