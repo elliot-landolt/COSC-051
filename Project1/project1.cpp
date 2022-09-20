@@ -3,6 +3,7 @@
 using namespace std;
 
 int main (){
+    
     int length, width, sqQuart, costQuart, costTotal, surfArea, totalQuart;
     cout << "How long is the wall? ";
     cin >> length;
