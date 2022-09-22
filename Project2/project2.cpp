@@ -4,7 +4,7 @@ using namespace std;
 
 int main (){
     int userInput;
-    cout << "Press 0 for painting a wall, press 1 for ordering food";
+    cout << "Press 0 for painting a wall, press 1 for ordering food ";
     cin >> userInput;
     if (userInput == 0){
         double length, width, sqQuart, costQuart, costTotal, surfArea, totalQuart;
