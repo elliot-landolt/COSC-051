@@ -22,11 +22,14 @@ int main (){
         cout << "You will need " << totalQuart << " quarts of paint to cover the wall. It will cost " 
             << costTotal << " dollars to paint the wall";
     }
-    if (userInput == 1){
+    else if (userInput == 1){
 
     }
 
-    if (userInput == 2){
+    else if (userInput == 2){
 
+    }
+    else {
+        cout << "Please enter a valid number (0, 1, 2)";
     }
 }
