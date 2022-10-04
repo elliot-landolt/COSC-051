@@ -4,9 +4,11 @@ using namespace std;
 
 int main (){
     int userInput;
-    cout << "Press 0 for painting a wall, press 1 for ordering food ";
+    cout << "Press 1 for painting a wall, Press 2 for mowing the lawn, press 3 for ordering food ";
     cin >> userInput;
-    if (userInput == 0){
+    switch (userInput)
+    {
+    case 1:
         double length, width, sqQuart, costQuart, costTotal, surfArea, totalQuart;
         cout << "How long is the wall? ";
         cin >> length;
@@ -21,17 +23,23 @@ int main (){
         costTotal = totalQuart * costQuart;
         cout << "You will need " << totalQuart << " quarts of paint to cover the wall. It will cost " 
             << costTotal << " dollars to paint the wall";
-        return 0;
-    }
-    else if (userInput == 1){
+        break;
+    
+    case 2:
 
-    }
+    case 3: 
 
-    else if (userInput == 2){
-
-    }
-    else {
-        cout << "Please enter a valid number (0, 1, 2)";
-
+    default:
+        if (userInput > 3)
+        {
+            cout << userInput << " ";
+            for (int i = 0; i < userInput; i++)
+            {
+                cout << "*";
+            }
+        }
+        else
+            cout << "Please enter a valid number";
+        break;
     }
 }
