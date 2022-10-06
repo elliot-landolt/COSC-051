@@ -32,7 +32,7 @@ int main (){
             break;
     
         case 2:
-            double length, width, duration, cutRate, surfArea;
+            double duration, cutRate;
             cout << "How long is the lawn? ";
             cin >> length;
             cout << "How wide is the lawn? ";
@@ -44,14 +44,14 @@ int main (){
             cout << "It will take " << duration << " hours to cut the lawn";
             break;
         case 3: 
-            double deliveryLength, milesPer, fuelCost, costTotal, gallons;
+            double deliveryLength, milesPer, fuelCost, gallons;
             cout << "How far is the delivery in miles? ";
             cin >> deliveryLength;
             cout << "How many miles per gallon does the car get? ";
             cin >> milesPer;
             cout << "What is the fuel cost per gallon? ";
             cin >> fuelCost;
-            gallons = deliveryLength * milesPer;
+            gallons = deliveryLength / milesPer;
             costTotal = gallons * fuelCost;
             cout << "It will cost " << costTotal << " dollars in gas to make the delivery.";
             break;
