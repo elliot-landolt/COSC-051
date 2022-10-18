@@ -5,12 +5,13 @@
 using namespace std;
 
 ofstream outFile;
-ofstream inFile;
-char manage;
+ifstream inFile;
+double manage;
 
 int main(){
-    inFile.open("test.dat");
+    inFile.open("test.txt");
     outFile.open("test2.txt");
     inFile >> manage;
-    outFile << "this is a working test";
+    cout << manage;
+    outFile << manage;
 }
