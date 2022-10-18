@@ -1,18 +1,16 @@
 #include <string>
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
+ofstream outFile;
+ofstream inFile;
+char manage;
+
 int main(){
-    int num = 5;
-    string name;
-    cout << "test\n";
-    getline(cin, name);
-    if (num == 4 || name == "Elliot"){
-        cout << "it worked";
-        return 0;
-    }
-    cout << name;
-    cin >> name;
-    cout << name;
+    inFile.open("test.dat");
+    outFile.open("test2.txt");
+    inFile >> manage;
+    outFile << "this is a working test";
 }
