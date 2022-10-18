@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -25,7 +26,7 @@ int main (){
             cout << "How much does each quart cost? ";
             cin >> costQuart;
             surfArea = length * width;
-            totalQuart = surfArea / sqQuart;
+            totalQuart = ceil(surfArea / sqQuart);
             costTotal = totalQuart * costQuart;
             cout << "You will need " << totalQuart << " quarts of paint to cover the wall. It will cost " 
                 << costTotal << " dollars to paint the wall";
