@@ -12,6 +12,5 @@ int main(){
     inFile.open("test.txt");
     outFile.open("test2.txt");
     inFile >> manage;
-    cout << manage;
     outFile << manage;
 }
