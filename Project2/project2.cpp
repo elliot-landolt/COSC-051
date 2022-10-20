@@ -10,7 +10,7 @@ ifstream inFile;
 int main (){
     int done = 0;
     int userInput;
-    inFile.open("input.txt");
+    inFile.open("P2Test.txt");
     outFile.open("output.txt");
     while (done == 0)
     {
