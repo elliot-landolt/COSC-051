@@ -1,5 +1,18 @@
-You will need 17 quarts of paint to cover the wall. It will cost 38.25 dollars to paint the wall
-It will cost 9.04531 dollars in gas to make the delivery.
+You will need 10 quarts of paint to cover the wall. It will cost 50 dollars to paint the wall
+You will need 4 quarts of paint to cover the wall. It will cost 40 dollars to paint the wall
+It will take 300 minutes to cut the lawn
+It will take 165 minutes to cut the lawn
+It will cost 10 dollars in gas to make the delivery.
+It will cost 4.5 dollars in gas to make the delivery.
+4 ****
+You will need 2 quarts of paint to cover the wall. It will cost 11 dollars to paint the wall
+It will take 180 minutes to cut the lawn
+It will cost 10.5 dollars in gas to make the delivery.
 7 *******
-It will take 480 minutes to cut the lawn
-6 ******
+You will need 10 quarts of paint to cover the wall. It will cost 45 dollars to paint the wall
+You will need 9 quarts of paint to cover the wall. It will cost 30.78 dollars to paint the wall
+9 *********
+It will take 117.6 minutes to cut the lawn
+It will take 183.6 minutes to cut the lawn
+It will cost 9.04531 dollars in gas to make the delivery.
+It will cost 13.8396 dollars in gas to make the delivery.
