@@ -8,22 +8,23 @@ using namespace std;
 ofstream outFile;
 ifstream inFile;
 
-int score;
+const int roomCapacity = 45;
+float score;
 char letterGrade;
-char grade(int score); // create function to calculate letter grade
+char grade(float score); // create function to calculate letter grade
+float weightedScore(); // create function to calculate weighted grade
 
 int main (){
-    grade(87);
-    cout << letterGrade;
-
+    grade(52);
 }
 
-int weightedScore (){
+float weightedScore (){
 
 
+    return score;
 }
 
-char grade (int score){
+char grade (float score){
     if (score >= 90){
         letterGrade = 65;
     }
