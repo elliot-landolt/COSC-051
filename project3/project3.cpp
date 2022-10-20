@@ -9,19 +9,19 @@ ofstream outFile;
 ifstream inFile;
 
 const int roomCapacity = 45;
-float score;
 char letterGrade;
 char grade(float score); // create function to calculate letter grade
 float weightedScore(); // create function to calculate weighted grade
 
 int main (){
     grade(52);
+    cout << letterGrade;
 }
 
 float weightedScore (){
 
 
-    return score;
+    return 0;
 }
 
 char grade (float score){
