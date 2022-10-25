@@ -9,6 +9,7 @@ ofstream outFile;
 ifstream inFile;
 
 const int roomCapacity = 45;
+int array[roomCapacity - 1]; // create master array for students
 char letterGrade;
 char grade(float score); // create function to calculate letter grade
 float weightedScore(); // create function to calculate weighted grade
