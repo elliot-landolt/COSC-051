@@ -15,6 +15,8 @@ char grade(float score); // create function to calculate letter grade
 float weightedScore(); // create function to calculate weighted grade
 
 int main (){
+    inFile.open("infile.txt");
+    outFile.open("output.txt");
     grade(52);
     cout << letterGrade;
 }
