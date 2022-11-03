@@ -1,52 +1,85 @@
 #include <fstream>
 #include <cmath>
 #include <string>
-#include <iostream>
+#include <vector>
 
 using namespace std;
 
-ofstream outFile;
-ifstream inFile;
-
+ofstream ofs;
+ifstream ifs;
 const int roomCapacity = 45;
-int array[roomCapacity - 1]; // create master array for students
-char letterGrade;
-char grade(float score); // create function to calculate letter grade
-float weightedScore(); // create function to calculate weighted grade
+
+struct Student // create student structure
+{
+    string name;
+    int grades[7]; // create grades array
+    float weightedScore;
+    char finalGrade;
+};
 
 int main (){
-    inFile.open("infile.txt");
-    outFile.open("output.txt");
-    grade(52);
-    cout << letterGrade;
+    ifs.open("P3Test.txt");
+    ofs.open("P3output.txt");
+    double weights[7] = {0.02, 0.1, 0.1, 0.14, 0.14, 0.2, 0.3}; // create weights array
+    Student student;
+
 }
 
-float weightedScore (){
-
-
-    return 0;
+void weightedAverage (Student&student, double weights[]){
+    double avg = 0;
+    for (int i =0; i < 7; i++){
+    avg += student.grades[i] * weights[i];
+    }
 }
 
-char grade (float score){
-    if (score >= 90){
-        letterGrade = 65;
+void grade (Student&student){
+    for (int i = 0; i < roomCapacity; i++)
+    {
+        if (student.weightedScore >= 90){
+         student.finalGrade = 65;
     }
-    else if (score >= 80 and score <= 89){
-        letterGrade = 66;
+    else if (student.weightedScore >= 80 and student.weightedScore <= 89){
+        student.finalGrade = 66;
     }
-    else if(score >= 70 and score <= 79){
-        letterGrade = 67;
+    else if(student.weightedScore >= 70 and student.weightedScore <= 79){
+        student.finalGrade = 67;
     }
-    else if(score >= 60 and score <= 69){
-        letterGrade = 68;
+    else if(student.weightedScore >= 60 and student.weightedScore <= 69){
+        student.finalGrade = 68;
     }
-    else if(score >= 0 and score <= 59){
-        letterGrade = 70;
+    else if(student.weightedScore >= 0 and student.weightedScore <= 59){
+        student.finalGrade = 70;
     }
     else
     {
-        cout << "Please enter a valid score";
-        return 0;
+        ofs << "Invalid Score";
     }
-    return letterGrade;
+    } 
+}
+
+vector <Student> readStudentsFromFile(double weights[]){
+    vector <Student> students;
+    string name;
+    while (ifs >> name) {
+        Student student;
+        student.name = name;
+        for (int i = 0; i < 7; i++)
+        {
+            ifs >> student.grades[i];
+        }
+        weightedAverage(student, weights);
+        grade(student);
+        students.push_back(student);
+    }
+    return students;
+}
+
+void printStudent (Student&student){
+    ofs << student.name << "Grades: ";
+    for (int grade : student.grades){
+        ofs << grade << " ";    
+    }
+    ofs << "Weighted Average: " << student.weightedScore;
+    ofs << "Final Grade: " << student.finalGrade << endl;
+
 }
