@@ -1,3 +1,4 @@
+In order of entry: 
 Student1 Grades: 100 100 100 100 100 100 100 Weighted Average: 100 Final Grade: A
 Student2 Grades: 90 90 90 90 90 90 90 Weighted Average: 90 Final Grade: A
 Student3 Grades: 80 80 80 80 80 80 80 Weighted Average: 80 Final Grade: B
@@ -43,7 +44,7 @@ Student42 Grades: 90 93 100 99 96 99 92 Weighted Average: 95.8 Final Grade: A
 Student43 Grades: 94 96 98 94 91 95 98 Weighted Average: 95.58 Final Grade: A
 Student44 Grades: 84 84 80 85 85 89 88 Weighted Average: 86.08 Final Grade: B
 Student45 Grades: 85 86 83 82 86 85 88 Weighted Average: 85.52 Final Grade: B
-Sorted by weighted score
+Sorted by weighted score: 
 Student1 Grades: 100 100 100 100 100 100 100 Weighted Average: 100 Final Grade: A
 Student2 Grades: 90 90 90 90 90 90 90 Weighted Average: 90 Final Grade: A
 Student3 Grades: 80 80 80 80 80 80 80 Weighted Average: 80 Final Grade: B
