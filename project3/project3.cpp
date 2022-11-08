@@ -30,6 +30,7 @@ int main (){
     Student student;
     vector <Student> students = readStudentsFromFile(weights);
     ofs.open("P3Output.txt");
+    ofs << "In order of entry: " << endl;
     for(Student student : students)
     {
         printStudent(student);
