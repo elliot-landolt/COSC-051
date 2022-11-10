@@ -23,7 +23,6 @@ void weightedAverage (Student&, double[]);
 void grade (Student&);
 vector <Student> readStudentsFromFile(double[]);
 void printStudent (Student&);
-void sortStudent (Student&);
 
 int main (){
     double weights[numberOfGrades] = {0.02, 0.1, 0.1, 0.14, 0.14, 0.2, 0.3}; // create weights array
@@ -41,7 +40,7 @@ int main (){
     });
     for(Student student : students)
     {
-        sortStudent(student);
+        printStudent(student);
     }
 }
 
@@ -80,15 +79,6 @@ void printStudent (Student& student){
         ofs << student.grades[i] << " ";
     }
 
-    ofs << "Weighted Average: " << student.weightedScore;
-    ofs << " Final Grade: " << student.finalGrade << endl;
-}
-
-void sortStudent (Student& student){
-    ofs << student.name << " Grades: ";
-    for (int i = 0; i< 7; i++){
-        ofs << student.grades[i] << " ";
-    }
     ofs << "Weighted Average: " << student.weightedScore;
     ofs << " Final Grade: " << student.finalGrade << endl;
 }
