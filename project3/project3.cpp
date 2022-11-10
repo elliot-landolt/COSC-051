@@ -10,7 +10,6 @@ const int roomCapacity = 45;
 const int numberOfGrades = 7;
 ofstream ofs;
 
-
 struct Student // create student structure
 {
     string name;
