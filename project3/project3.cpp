@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -34,7 +35,10 @@ int main (){
     {
         printStudent(student);
     }
-    ofs << "Sorted by weighted score: " << endl;
+    ofs << "\nSorted by weighted score: " << endl;
+    sort(students.begin(), students.end(), [](Student a, Student b){
+        return a.weightedScore > b.weightedScore;
+    });
     for(Student student : students)
     {
         sortStudent(student);
