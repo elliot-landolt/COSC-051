@@ -18,37 +18,39 @@ class Student // create student structure
 
     public:
     string name;
-    int g[numberOfGrades];
-    void setGrades (int){
-        for (int index = 0; index < numberOfGrades; index++)
-        grades[index] = g[index];
-    }
     void weightedAverage (Student&, double[]);
     void grade (Student&);
     float weightedScore;
     char finalGrade;
+    vector <Student> readStudentsFromFile(double[]);
+    void printStudent(Student&);
 };
-
-void printStudent(Student&);
-vector <Student> readStudentsFromFile(double[]);
 
 int main (){
     double weights[numberOfGrades] = {0.02, 0.1, 0.1, 0.14, 0.14, 0.2, 0.3}; // create weights array
     Student student;
-    vector <Student> students = readStudentsFromFile(weights);
+    vector <Student> students = student.readStudentsFromFile(weights);
     ofs.open("P4Output.txt");
     ofs << "In order of entry: " << endl;
     for(Student student : students)
     {
-        printStudent(student);
+        student.printStudent(student);
     }
-    ofs << "\nSorted by weighted score: " << endl;
+    ofs << "\nAlphabetical Ascending: " << endl;
     sort(students.begin(), students.end(), [](Student a, Student b){
-        return a.weightedScore > b.weightedScore;
+        return a.name < b.name;
     });
     for(Student student : students)
     {
-        printStudent(student);
+        student.printStudent(student);
+    }
+    ofs << "\nAlphabetical Descending: " << endl;
+    sort(students.begin(), students.end(), [](Student a, Student b){
+        return a.name > b.name;
+    });
+    for(Student student : students)
+    {
+        student.printStudent(student);
     }
 }
 
@@ -77,18 +79,18 @@ void Student::grade (Student& student){
     } 
 
 
-void printStudent (Student& student){
+void Student::printStudent (Student& student){
     ofs << student.name << " Grades: ";
 
     for (int i = 0; i< 7; i++){
-        ofs << student.g[i] << " ";
+        ofs << student.grades[i] << " ";
     }
 
-    ofs << "Weighted Average: " << student.weightedScore;
+    ofs << "Weighted Average: " << setprecision(3) << student.weightedScore;
     ofs << " Final Grade: " << student.finalGrade << endl;
 }
 
-vector <Student> readStudentsFromFile(double weights[]){
+vector <Student> Student::readStudentsFromFile(double weights[]){
     ifstream ifs;
     ifs.open("P4Test.txt");
 
@@ -101,17 +103,11 @@ vector <Student> readStudentsFromFile(double weights[]){
         for (int i = 0; i < 7; i++)
         {
             ifs >> input;
-            student.g[i] = stoi(input);
-        }
-        
-        for(int i =0; i <7; i++)
-        {
-            cout << student.g[i] << endl;
+            student.grades[i] = stoi(input);
         }
 
         student.weightedAverage(student, weights);
         student.grade(student);
-        student.setGrades(student.g[numberOfGrades]);
         students.push_back(student);
     }
     return students;
