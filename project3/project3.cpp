@@ -79,7 +79,7 @@ void printStudent (Student& student){
         ofs << student.grades[i] << " ";
     }
 
-    ofs << "Weighted Average: " << student.weightedScore;
+    ofs << "Weighted Average: " << setprecision(3) << student.weightedScore;
     ofs << " Final Grade: " << student.finalGrade << endl;
 }
 
