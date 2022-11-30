@@ -2,27 +2,35 @@
 #include <cmath>
 #include <string>
 #include <vector>
-#include <iostream>
+#include <iostream> // can remove when finished
 #include <algorithm>
+#include <iomanip> // may not need, textbook said use but I think it still runs without
 
 using namespace std;
 
-const int roomCapacity = 45;
 const int numberOfGrades = 7;
 ofstream ofs;
 
-struct Student // create student structure
+class Student // create student structure
 {
+    private:
+    int grades[numberOfGrades];
+
+    public:
     string name;
-    int grades[numberOfGrades]; // create grades array
+    int g[numberOfGrades];
+    void setGrades (int){
+        for (int index = 0; index < numberOfGrades; index++)
+        grades[index] = g[index];
+    }
+    void weightedAverage (Student&, double[]);
+    void grade (Student&);
     float weightedScore;
     char finalGrade;
 };
 
-void weightedAverage (Student&, double[]);
-void grade (Student&);
+void printStudent(Student&);
 vector <Student> readStudentsFromFile(double[]);
-void printStudent (Student&);
 
 int main (){
     double weights[numberOfGrades] = {0.02, 0.1, 0.1, 0.14, 0.14, 0.2, 0.3}; // create weights array
@@ -44,12 +52,9 @@ int main (){
     }
 }
 
-void grade (Student& student){
+void Student::grade (Student& student){
     ofstream ofs;
     ofs.open("P4Output.txt");
-
-    for (int i = 0; i < roomCapacity; i++)
-    {
         if (student.weightedScore >= 90){
             student.finalGrade = 65;
         }
@@ -70,13 +75,13 @@ void grade (Student& student){
             ofs << "Invalid Score";
         }
     } 
-}
+
 
 void printStudent (Student& student){
     ofs << student.name << " Grades: ";
 
     for (int i = 0; i< 7; i++){
-        ofs << student.grades[i] << " ";
+        ofs << student.g[i] << " ";
     }
 
     ofs << "Weighted Average: " << student.weightedScore;
@@ -96,16 +101,23 @@ vector <Student> readStudentsFromFile(double weights[]){
         for (int i = 0; i < 7; i++)
         {
             ifs >> input;
-            student.grades[i] = stoi(input);
+            student.g[i] = stoi(input);
         }
-        weightedAverage(student, weights);
-        grade(student);
+        
+        for(int i =0; i <7; i++)
+        {
+            cout << student.g[i] << endl;
+        }
+
+        student.weightedAverage(student, weights);
+        student.grade(student);
+        student.setGrades(student.g[numberOfGrades]);
         students.push_back(student);
     }
     return students;
 }
 
-void weightedAverage (Student&student, double weights[]){
+void Student::weightedAverage (Student&student, double weights[]){
     double avg = 0;
     for (int i =0; i < numberOfGrades; i++){
     avg += (student.grades[i] * weights[i]);
